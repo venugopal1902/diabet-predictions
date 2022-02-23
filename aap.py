@@ -1,10 +1,11 @@
-from select import select
-from flask import Flask
+from pywebio.platform.flask import webio_view
+from pywebio import STATIC_PATH
+from flask import Flask, send_from_directory
 from pywebio.input import *
 from pywebio.output import *
-from pywebio.output import put_text 
+import argparse
 from pywebio import start_server
-import pandas as pd
+
 import pickle
 import numpy as np
 model = pickle.load(open('venu.pkl', 'rb'))
